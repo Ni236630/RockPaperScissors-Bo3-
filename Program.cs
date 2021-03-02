@@ -24,13 +24,15 @@ void Main()
         //win conditions for game
         if (PlayerScore == 3)
         {
+           
             Console.WriteLine("You Won!");
         }
         else if ( CompScore == 3)
         {
+            
             Console.WriteLine("You Lost!");
         }
-   
+      
 }
 
 
@@ -39,14 +41,14 @@ void Choice()
 {
     int Choice = Int32.Parse(Console.ReadLine());
     int CompChoice = new Random().Next(1,4);
-    
+
     // to make sure score is recorded for the initial pick 
 
     Score(Choice, CompChoice);
     RockPaperScissors(Choice, CompChoice);
     
     
-    while ( PlayerScore != 3 )
+    while ( PlayerScore != 3 || Choice != 4)
     {
         if( Choice > 0 && Choice < 4)
         {
@@ -58,7 +60,8 @@ void Choice()
         }
         else if ( Choice == 4)
         {
-            Console.WriteLine("Good-Bye");
+            Console.WriteLine("Goodbye");
+            Environment.Exit(0);
         }
         else
         {
